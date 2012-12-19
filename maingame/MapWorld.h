@@ -11,8 +11,4 @@ public:
 	void				InitMap();
 	vector<vector<int>> map;
 
-
-	
-
-	
 };

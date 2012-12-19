@@ -1,6 +1,4 @@
 #include"MapWorld.h"
-
-
 void MapWorld::SetMap(int y,int x,int status)
 {
 	/*
@@ -31,7 +29,7 @@ void MapWorld::ShowMap()
 {
 	
 	int i=0;
-	cout<<"  ABCDEFGHJH"<<endl;
+	cout<<"  ABCDEFGHIJ"<<endl;
 	for(vector<vector<int>>::iterator it=map.begin();it!=map.end();it++)
 	{
 		cout<<i<<" ";

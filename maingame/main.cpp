@@ -1,4 +1,4 @@
-#include"Ship.h"
+#include"Game.h"
 int main()
 {
 	setlocale(LC_ALL,"");
