@@ -1,14 +1,5 @@
 #include"MapWorld.h"
-void MapWorld::SetMap(int y,int x,int status)
-{
-	/*
-	status:
-	0 == water
-	1 == ship
-	*/
-	map[y][x]=status;
-}
-void MapWorld::InitMap()
+MapWorld::MapWorld()
 {
 	map.resize(10);
 	for(vector<vector<int>>::iterator it=map.begin();it!=map.end();it++)
@@ -22,6 +13,17 @@ void MapWorld::InitMap()
 		
 	}
 }
+void MapWorld::SetMap(int y,int x,int status)
+{
+	/*
+	status:
+	0 == water
+	1 == ship
+	2 == checked
+	3 == killcheck
+	*/
+	map[y][x]=status;
+}
 void MapWorld::ShowMap()
 {
 	
@@ -32,7 +34,21 @@ void MapWorld::ShowMap()
 		cout<<i<<" ";
 		for(vector<int>::iterator its=(*it).begin();its!=(*it).end();its++)
 		{
-			cout<<*its;
+			switch(*its)
+			{
+			case 0:
+				cout<<"O";
+				break;
+			case 1:
+				cout<<"#";
+			    break;
+			case 2:
+				cout<<"+";
+				break;
+			case 3:
+				cout<<"X";
+				break;
+			}
 		}
 		i++;
 		cout<<endl;

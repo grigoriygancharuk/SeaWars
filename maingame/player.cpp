@@ -1,5 +1,7 @@
 #include"Player.h"
-
+Player::Player()
+{
+}
 void Player::SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *map)
 {
 	/*
@@ -27,6 +29,10 @@ void Player::SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *ma
 				map->SetMap(y-3,x,1);
 				shp->four_deck--;
 			}
+			else
+			{
+			cout<<EMSG;
+			}
 		}
 		catch(exception ex)
 		{
@@ -49,6 +55,10 @@ void Player::SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *ma
 				map->SetMap(y,x-3,1);
 				shp->four_deck--;
 			}
+			else
+			{
+			cout<<EMSG;
+			}
 		}
 		catch(exception ex)
 		{
@@ -70,6 +80,10 @@ void Player::SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *ma
 				map->SetMap(y+3,x,1);
 				shp->four_deck--;
 			}
+			else
+			{
+			cout<<EMSG;
+			}
 		}
 		catch(exception ex)
 		{
@@ -90,6 +104,10 @@ void Player::SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *ma
 				map->SetMap(y,x+2,1);
 				map->SetMap(y,x+3,1);
 				shp->four_deck--;
+			}
+			else
+			{
+			cout<<EMSG;
 			}
 		}
 		catch(exception ex)
@@ -114,6 +132,10 @@ void Player::SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *ma
 				map->SetMap(y-2,x,1);
 				shp->three_deck--;
 			}
+			else
+			{
+			cout<<EMSG;
+			}
 		}
 		catch(exception ex)
 		{
@@ -134,6 +156,10 @@ void Player::SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *ma
 				map->SetMap(y,x-2,1);
 				shp->three_deck--;
 			}
+			else
+			{
+			cout<<EMSG;
+			}
 		}
 		catch(exception ex)
 		{
@@ -153,6 +179,10 @@ void Player::SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *ma
 				map->SetMap(y+2,x,1);
 				shp->three_deck--;
 			}
+			else
+			{
+			cout<<EMSG;
+			}
 		}
 		catch(exception ex)
 		{
@@ -171,6 +201,10 @@ void Player::SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *ma
 				map->SetMap(y,x+1,1);
 				map->SetMap(y,x+2,1);
 				shp->three_deck--;
+			}
+			else
+			{
+			cout<<EMSG;
 			}
 		}
 		catch(exception ex)
@@ -193,6 +227,10 @@ void Player::SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *ma
 				map->SetMap(y-1,x,1);
 				shp->two_deck--;
 			}
+			else
+			{
+			cout<<EMSG;
+			}
 		}
 		catch(exception ex)
 		{
@@ -211,6 +249,10 @@ void Player::SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *ma
 				map->SetMap(y,x-1,1);
 				shp->two_deck--;
 			}
+			else
+			{
+			cout<<EMSG;
+			}
 		}
 		catch(exception ex)
 		{
@@ -228,6 +270,10 @@ void Player::SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *ma
 				map->SetMap(y+1,x,1);
 				shp->two_deck--;
 			}
+			else
+			{
+			cout<<EMSG;
+			}
 		}
 		catch(exception ex)
 		{
@@ -244,6 +290,10 @@ void Player::SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *ma
 				map->SetMap(y,x,1);
 				map->SetMap(y,x+1,1);
 				shp->two_deck--;
+			}
+			else
+			{
+			cout<<EMSG;
 			}
 		}
 		catch(exception ex)
@@ -263,6 +313,10 @@ void Player::SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *ma
 					map->SetMap(y,x,1);
 					shp->one_deck--;
 				}
+			else
+			{
+			cout<<EMSG;
+			}
 			}
 		catch(exception ex)
 		{
@@ -276,6 +330,10 @@ void Player::SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *ma
 					map->SetMap(y,x,1);
 					shp->one_deck--;
 				}
+			else
+			{
+			cout<<EMSG;
+			}
 			}
 		catch(exception ex)
 		{
@@ -290,6 +348,10 @@ void Player::SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *ma
 					map->SetMap(y,x,1);
 					shp->one_deck--;
 				}
+			else
+			{
+			cout<<EMSG;
+			}
 			}
 		catch(exception ex)
 		{
@@ -303,6 +365,10 @@ void Player::SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *ma
 					map->SetMap(y,x,1);
 					shp->one_deck--;
 				}
+			else
+			{
+			cout<<EMSG;
+			}
 			}
 		catch(exception ex)
 		{
@@ -312,16 +378,22 @@ void Player::SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *ma
 	}
 
 }
-void Player::DoStep(Ship *shp,MapWorld *map)
+void Player::DoStep(Ship *shp,MapWorld *map,MapWorld *map2,MapWorld *map3)
 {
+	/*
+	map - map player
+	map2 - map enemy
+	map3 - map player step
+	*/
 	int x=0;
 	int y=0;
 	int statex=0;
 	int statey=0;
 	char atoy;
 
-	
+	cout<<"¬ведите координаты атаки(например 2 J): ";
 	cin>>x>>atoy;
+	cout<<endl;
 	y=int(atoy)-65;
 	if(x<0 || x>9)
 	{
@@ -331,10 +403,27 @@ void Player::DoStep(Ship *shp,MapWorld *map)
 	if(y<0 || y>9)
 	{
 	cout<<"координата Y не верна"<<endl;
-	statey=0;
+	statey=1;
 	}
 	if(statex==0 && statey==0)
-	map->SetMap(x,y,1);
-	
+	{
+	if(map3->map.at(y).at(x)!=2 && map3->map.at(y).at(x)!=3)
+	{
+	if(map2->map.at(y).at(x)==0)
+	{
+		map3->SetMap(x,y,2);
+		map2->SetMap(x,y,0);
+	}
+	if(map2->map.at(y).at(x)==1)
+	{
+		map3->SetMap(x,y,3);
+		map2->SetMap(x,y,0);
+	}
+	}
+	else
+	{
+		cout<<"¬ы уже ходили по этой точке"<<endl;
+	}
+	}
 	
 }

@@ -4,7 +4,7 @@
 class Player
 {
 public:
-	Player(){};
+	Player();
 	void SetShipOnMap(int y,int x,int direct,int type,Ship *shp,MapWorld *map);
-	void DoStep(Ship *shp,MapWorld *map);
+	void DoStep(Ship *shp,MapWorld *map,MapWorld *map2,MapWorld *map3);
 };
