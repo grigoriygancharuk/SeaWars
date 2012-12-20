@@ -1,18 +1,15 @@
-#include"Game.h"
+#include"Player.h"
 int main()
 {
 	setlocale(LC_ALL,"");
-	MapWorld *mpP=new MapWorld();//map Player
-	MapWorld *mpE=new MapWorld();//map Enemy
+	MapWorld *map=new MapWorld();
 	Ship *shp=new Ship();
+	Player *pl=new Player();
+	map->InitMap();
+	pl->DoStep(shp,map);
 	
-	mpP->InitMap();
-	mpP->ShowMap();
-	shp->SetShipOnMap(5,6,3,4,mpP);
-	shp->SetShipOnMap(0,9,0,4,mpP);
-	//mpE->InitMap();
-
-	mpP->ShowMap();
+	map->ShowMap();
+	system("PAUSE");
 	cin.get();
 	return 0;
 }

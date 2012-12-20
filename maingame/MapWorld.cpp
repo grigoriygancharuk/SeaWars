@@ -6,11 +6,8 @@ void MapWorld::SetMap(int y,int x,int status)
 	0 == water
 	1 == ship
 	*/
-	
 	map[y][x]=status;
-	
 }
-
 void MapWorld::InitMap()
 {
 	map.resize(10);
