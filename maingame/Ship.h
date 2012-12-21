@@ -2,9 +2,11 @@ class Ship
 {
 public:
 	Ship();
-	int four_deck;
-	int three_deck;
-	int two_deck;
-	int one_deck;
-	
+	virtual ~Ship();
+	int GetDeckState(int who); 
+private:
+	int oneDeck;
+	int twoDeck;
+	int threeDeck;
+	int fourDeck;
 };

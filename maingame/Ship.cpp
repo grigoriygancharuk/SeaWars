@@ -1,9 +1,31 @@
 #include"Ship.h"
-
 Ship::Ship()
 {
-	one_deck=4;
-	two_deck=3;
-	three_deck=2;
-	four_deck=1;
+	oneDeck=4;
+	twoDeck=3;
+	threeDeck=2;
+	fourDeck=1;
+}
+Ship::~Ship()
+{
+}
+int Ship::GetDeckState(int who)
+{
+	switch(who)
+	{
+	case 1:
+		return oneDeck;
+		break;
+	case 2:
+		return twoDeck;
+		break;
+	case 3:
+		return threeDeck;
+		break;
+	case 4:
+		return fourDeck;
+		break;
+	default:
+		return -1;
+	}
 }

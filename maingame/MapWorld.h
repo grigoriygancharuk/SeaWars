@@ -1,15 +1,14 @@
 #include<vector>
-#include<iterator>
 #include<iostream>
-
-
+#include<iterator>
 using namespace std;
 class MapWorld
 {
 public:
 	MapWorld();
-	void				SetMap(int,int,int);
-	void				ShowMap();
+	virtual ~MapWorld();
+	void Show();
+private:
 	vector<vector<int>> map;
-
+	
 };

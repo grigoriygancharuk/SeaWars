@@ -1,57 +1,48 @@
 #include"MapWorld.h"
 MapWorld::MapWorld()
 {
+	
 	map.resize(10);
-	for(vector<vector<int>>::iterator it=map.begin();it!=map.end();it++)
+	for(vector<vector<int>>::iterator i=map.begin();i!=map.end();i++)
 	{
-		(*it).resize(10);
-		for(vector<int>::iterator its=(*it).begin();its!=(*it).end();its++)
+		(*i).resize(10);
+		for(vector<int>::iterator j=(*i).begin();j!=(*i).end();j++)
 		{
-			
-			*its=0;
+			*j=0;
+
 		}
-		
 	}
 }
-void MapWorld::SetMap(int y,int x,int status)
-{
-	/*
-	status:
-	0 == water
-	1 == ship
-	2 == checked
-	3 == killcheck
-	*/
-	map[y][x]=status;
-}
-void MapWorld::ShowMap()
+MapWorld::~MapWorld()
 {
 	
-	int i=0;
-	cout<<"  ABCDEFGHIJ"<<endl;
-	for(vector<vector<int>>::iterator it=map.begin();it!=map.end();it++)
+}
+void MapWorld::Show()
+{
+	cout<<"  0123456789"<<endl;
+	char symbol='A';
+	for(vector<vector<int>>::iterator i=map.begin();i!=map.end();i++)
 	{
-		cout<<i<<" ";
-		for(vector<int>::iterator its=(*it).begin();its!=(*it).end();its++)
+		cout<<symbol++<<" ";
+		for(vector<int>::iterator j=(*i).begin();j!=(*i).end();j++)
 		{
-			switch(*its)
+			switch(*j)
 			{
-			case 0:
-				cout<<"O";
-				break;
-			case 1:
-				cout<<"#";
-			    break;
-			case 2:
-				cout<<"+";
-				break;
-			case 3:
-				cout<<"X";
-				break;
+				case 0:
+					cout<<"O";
+					break;
+				case 1:
+					cout<<"#";
+					break;
+				case 2:
+					cout<<"+";
+					break;
+				case 3:
+					cout<<"X";
+					break;
+				
 			}
 		}
-		i++;
 		cout<<endl;
-		
 	}
 }
